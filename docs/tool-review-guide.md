@@ -1,5 +1,19 @@
 # Tool review guide
 
+## Product fit comes first
+
+Before reviewing any evidence, record `pass-fit`, `fail-fit`, or `unclear-fit`, with the intended user, core job, and why the product is or is not built for agents. Use only its product description and operating model, plus canonical homepage positioning if necessary. Do not inspect evidence arrays, docs, MCP details, implementation, pricing, licence, or validation at this stage.
+
+- `pass-fit`: only now perform full first-party evidence, schema, and contradiction review. Passing fit is necessary, not acceptance.
+- `fail-fit`: stop with nonacceptance. Do not review evidence, enrich metadata, or commit listing changes.
+- `unclear-fit`: hold for product-positioning clarification. Do not review evidence or proceed with metadata or listing commits.
+
+A human-first app with REST, MCP, or SDK access is not rescued by integration depth or tool count. An AI agent serving humans is not, by itself, a tool built for agents. Agent-oriented infrastructure, protocols, and agent-builder tools may pass when designed for agent operation; exclusive agent use or agent-only origins are not required. `agent-enabling` and category guidance about internal autonomous agents cannot bypass this gate.
+
+Historical reassessments and public corrections require separate owner approval. This guidance authorizes no existing-listing changes.
+
+## Review after `pass-fit`
+
 Tool authors may suggest `seoTitle`, `seoDescription`, and `agentSummary` in tool frontmatter. All three are optional, including for existing listings. The editorial reviewer owns the final public wording and may revise, omit, or remove a suggestion before approval.
 
 Review each field against the tool's cited first-party evidence and the existing profile. Keep the title specific to the tool and its agent-facing use (usually about 50–60 characters). Make the description a concise, factual reason to inspect the profile (usually about 140–160 characters). Make the agent summary one short plain-text paragraph about what the tool enables an agent to do (roughly 40–70 words). These are editorial drafting targets, not hard validation limits or automatic truncation rules. Avoid unsupported superlatives, promotional claims, repeated keywords, markdown, and HTML. A valid value must be a non-empty string after surrounding whitespace is trimmed.
