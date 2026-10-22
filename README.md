@@ -11,39 +11,47 @@ The website code lives separately in [bradvin/agentfirst.directory-site](https:/
 
 ## Editorial Policy
 
-**Agent First is intentionally opinionated, but agent-first infrastructure is broader than agent-only software.** The directory includes products and protocols that meet at least one of these classifications:
+**Only tools built for agents belong in this directory.** Decide product fit before reviewing evidence or assigning a classification. A human-first app with an API, MCP server, SDK, or embedded AI agent does not become a tool built for agents through integration depth or tool count.
 
-- **`agent-native`** — agents are a core actor, runtime, entity, or participant in the product. Examples include agent orchestration, agent identity and communications, agent-operated interfaces, and human-agent collaboration systems.
-- **`agent-enabling`** — the product materially empowers an agent-first workflow through substantive capabilities such as execution, memory, data access, communication, testing, or safe interaction. Agents do not need to be the product's exclusive or primary users.
-- **`agent-internet-protocol`** — an open protocol or interaction standard lets agents participate in internet communication, commerce, identity, coordination, or other machine-to-machine interaction.
+Agent-oriented infrastructure, protocols, and agent-builder tools can qualify when their operating model is designed for agent operation. They need not serve agents exclusively or have originated as agent-only products. An AI agent serving human customers is not, by itself, a tool built for agents.
 
-Classification explains *how* each listing qualifies; it is not a quality tier.
+### Product-fit gate (before evidence)
+
+Use only the product description and operating model, plus canonical homepage positioning if necessary. Do not inspect evidence arrays, documentation, MCP details, implementation, pricing, licence, or validation results to make or rescue this decision.
+
+Record one bounded semantic decision for each proposed listing:
+
+- **`pass-fit`** — record the intended user, core job, and why the product is built for agents. Only then proceed to evidence, schema, and contradiction review.
+- **`fail-fit`** — record the intended user, core job, and why it is not built for agents. Stop with nonacceptance; do not review evidence, enrich metadata, or commit listing changes.
+- **`unclear-fit`** — record the intended user, core job, and what prevents a built-for-agents decision. Hold for product-positioning clarification; do not review evidence or proceed with metadata or listing commits.
+
+A classification cannot bypass this gate. Category guidance suggesting that internal autonomous agents alone establish eligibility is superseded by this rule. Historical reassessments and public corrections require separate owner approval; this policy update does not authorize changes to existing listings.
+
+### Classifications (after `pass-fit`)
+
+- **`agent-native`** — the product is built for agent operation, with agents as core actors, runtimes, entities, or participants; for example, agent orchestration, identity, communication, or agent-operated interfaces.
+- **`agent-enabling`** — infrastructure or builder tooling designed for agent operation materially enables execution, memory, data access, communication, testing, or safe interaction. General-purpose usefulness or a secondary API/MCP integration cannot rescue a human-first product.
+- **`agent-internet-protocol`** — an open protocol or interaction standard designed for agent participation in communication, commerce, identity, coordination, or other machine-to-machine interaction.
+
+Classification explains *how* an eligible listing qualifies; it is not a quality tier.
 
 ## Inclusion Test
 
-A listing must pass all of these checks:
+After `pass-fit`, a listing must pass all of these checks:
 
-1. **Identify one classification.** Which of the three definitions does the product satisfy?
+1. **Identify one classification.** Which of the three definitions does the eligible product satisfy?
 2. **Name the concrete agent outcome.** What can an agent or agent builder materially do because this product or protocol exists?
 3. **Verify the claim from first-party evidence.** Product documentation, source repositories, protocol specifications, or first-party pages must describe the relevant capability.
-4. **Check that the capability is substantive.** The qualifying value must come from the product or protocol itself, not a thin wrapper or an integration badge.
-5. **Keep the directory defensible.** The listing and its classification must remain accurate without stretching generic technical compatibility into an agent-first claim.
+4. **Check that the capability is substantive.** The qualifying value must come from the product or protocol itself, not an integration badge.
+5. **Check schema and contradictions.** Validate the submission and resolve conflicting claims without treating a schema pass as proof of product fit.
 
 ## What Does Not Qualify
 
-A listing should be rejected when its only support is:
+Reject products not built for agents, including human-first apps with secondary REST, MCP, or SDK access, however extensive. Internal AI agents completing a human customer's task do not establish product fit. Generic compatibility, integration depth, tool count, and unsupported agent marketing cannot establish eligibility.
 
-- generic technical compatibility with software an agent could call;
-- a thin MCP, API, or command wrapper over an otherwise unrelated product;
-- vague or unsupported marketing language about agents;
-- a general-purpose primitive with no material agent-first workflow or agent-internet role;
-- third-party claims that cannot be confirmed from an authoritative first-party source.
+For coding-agent orchestrators, the product must own a material lifecycle across agent runs rather than merely invoke an agent. After product fit passes, evidence should show lifecycle controls such as task assignment and isolation, retained or shared state or validation evidence, and a separate gate that determines completion, review, or landing. Merely launching one agent, supplying prompts, wrapping an API or MCP server, advertising agent compatibility, or automating an ordinary developer task does not satisfy this boundary.
 
-General-purpose products can qualify as `agent-enabling` when their documented capabilities materially empower agent-first workflows. Conversely, adding an agent integration does not automatically qualify a product.
-
-For coding-agent orchestrators, the product must own a material lifecycle across agent runs rather than merely invoke an agent. Evidence should show lifecycle controls such as task assignment and isolation, retained or shared state or validation evidence, and a separate gate that determines completion, review, or landing. Merely launching one agent, supplying prompts, wrapping an API or MCP server, advertising agent compatibility, or automating an ordinary developer task does not satisfy this boundary.
-
-When evidence is ambiguous, do not invent a rationale: request stronger first-party evidence or reject the listing.
+When evidence is ambiguous after `pass-fit`, do not invent a rationale: request stronger first-party evidence or reject the listing.
 
 ## Structure
 
@@ -249,7 +257,7 @@ One broad homepage link should not be used to support unrelated claims. The cont
 
 ## How To Add A Tool
 
-1. Fork this repo or create a branch.
+1. Record `pass-fit` using the product-fit gate above before researching evidence or creating listing changes; otherwise stop. Fork this repo or create a branch only for a passing candidate.
 2. Pick the closest existing category in `categories/`.
 3. Add a new file in `tools/<slug>.md`.
 4. Fill in every required frontmatter field, including a non-empty `evidenceSources` array.
